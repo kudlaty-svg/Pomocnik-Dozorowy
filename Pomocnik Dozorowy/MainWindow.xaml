@@ -1,0 +1,27 @@
+﻿<Window x:Class="Pomocnik_Dozorowy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pomocnik_Dozorowy"
+        mc:Ignorable="d"
+        Title="Pomocnik Dozorowy" Height="400" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="False" ResizeMode="NoResize" >
+    <!-- Definicja siatki -->
+    <Grid Background="#FF1F1F1F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="0">
+            <TextBlock Text="Wybierze grupę urządzeń transportu bliskiego" TextWrapping="Wrap" FontSize="20" FontWeight="Bold" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center" Margin="0,20,0,20" FontFamily="Cambria" Width="300" TextAlignment="Center" />
+            <Button x:Name="Btn_Dzwignice" Content="Dźwignice" Style="{StaticResource DarkButtonStyle}" Margin="0,20,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Dzwignice_Click" />
+            <Button x:Name="Btn_WozkiJezdniowe" Content="Wózki jezdniowe" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_WozkiJezdniowe_Click" />
+            <Button x:Name="Btn_Pomoc" Content="Pomoc" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Pomoc_Click" />
+            <Button x:Name="Btn_Wyjscie" Content="Wyjście" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Wyjscie_Click" />
+        </StackPanel>
+        <Border Grid.Row="1" BorderBrush="#FF3D3D3D" BorderThickness="0,1,0,0" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0" >
+            <TextBlock Text="© 2026 Pomocnik Dozorowy v0.2.0b" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,0" />
+        </StackPanel>
+    </Grid>
+</Window>
