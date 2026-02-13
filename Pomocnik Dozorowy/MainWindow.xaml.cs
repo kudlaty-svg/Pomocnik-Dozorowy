@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Pomocnik_Dozorowy.Dzwignice;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,7 +24,9 @@ namespace Pomocnik_Dozorowy
         //Otwier okno z informacjami o dźwignicach
         private void Btn_Dzwignice_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Modół [Dźwignice] jest w przebudowie. Proszę o cierpliwość. Wszelkie zmiany oraz informacje o postępie prac dostępne będą na github/kudlaty-svg oraz CHANGELOG.", "Dźwignice", MessageBoxButton.OK, MessageBoxImage.Information);
+            OknoDzwignice oknoDzwignice = new OknoDzwignice();
+            oknoDzwignice.Show();
+            this.Close();
         }
         //Otwier okno z informacjami o wózkach jezdniowych
         private void Btn_WozkiJezdniowe_Click(object sender, RoutedEventArgs e)

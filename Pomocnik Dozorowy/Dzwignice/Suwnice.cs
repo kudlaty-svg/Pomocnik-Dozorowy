@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pomocnik_Dozorowy.Dzwignice
 {
-    internal class Dzwignice
+    internal class Suwnice
     {
         //Dane Identyfikacyjne
         public string? ID { get; set; }

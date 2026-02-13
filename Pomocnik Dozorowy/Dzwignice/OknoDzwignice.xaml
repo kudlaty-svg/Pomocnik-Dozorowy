@@ -1,0 +1,161 @@
+﻿<Window x:Class="Pomocnik_Dozorowy.Dzwignice.OknoDzwignice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pomocnik_Dozorowy.Dzwignice"
+        mc:Ignorable="d"
+        Height="500" Width="1200" WindowStartupLocation="CenterScreen" Background="#FF1F1F1F" AllowsTransparency="False" ResizeMode="NoResize" WindowStyle="None" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="150" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350" />
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="350" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="3" BorderThickness="0" Background="Transparent" MouseDown="Border_MouseDown" >
+            <DockPanel Grid.Row="0" Grid.ColumnSpan="3" LastChildFill="False" >
+                <TextBlock Text="Pomocnik Dozorowy" FontSize="14" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="10,0,15,0" FontFamily="SemiBold" DockPanel.Dock="Left" />
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                    <Button Content="0" FontFamily="Marlett" Width="30" Height="30" Background="Transparent" Foreground="White" BorderThickness="0" Style="{StaticResource DarkButtonStyle_Mini}" Click="Can_Minimalize" />
+                    <Button Content="r" FontFamily="Marlett" Width="30" Height="30" Background="Transparent" Foreground="White" BorderThickness="0" Style="{StaticResource DarkButtonStyle_Mini}" Click="Cross_Exit_App" />
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="#FF3D3D3D" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0" >
+                <TextBlock Text="Wybierz ID urządzenia: " FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,5,0,5" FontFamily="Cambria" Width="160" TextAlignment="Left" />
+                <ComboBox x:Name="ComboBox_ID" Style="{StaticResource DarkComboBoxStyle}" Width="150" Height="30" Margin="10,5,0,5" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <ComboBoxItem Content="Dźwignica 1" />
+                    <ComboBoxItem Content="Dźwignica 2" />
+                </ComboBox>
+                <Button Content="Dodaj" Width="100" Height="35" Margin="10,0,0,0" Style="{StaticResource DarkButtonStyle}" IsEnabled="False" />
+                <Button Content="Usuń" Width="100" Height="35" Margin="0,0,0,0" Style="{StaticResource DarkButtonStyle}" IsEnabled="False" />
+                <Button Content="Edytuj" Width="100" Height="35" Margin="0,0,0,0" Style="{StaticResource DarkButtonStyle}" IsEnabled="False" />
+                <Button Content="Powrót ->" Width="100" Height="35" Margin="440,0,10,0" Style="{StaticResource DarkButtonStyle}" />
+            </StackPanel>
+        </Border>
+        <!-- Dane Identyfikacyjne dźwignic lewa kolumna-->
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="#FF3D3D3D" BorderThickness="1,1,1,1" Background="Transparent" Margin="0,0,0,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0,0,0,0" Width="350">
+                <TextBox Text="Dane Identyfikacyjne" Margin="0,0,0,0" Height="30" Width="150" FontSize="14" FontFamily="Cambria" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="1,0,1,1" Focusable="False" IsHitTestVisible="False" Foreground="White" SelectionBrush="#FF6D7880" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" />
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,40,0,0" Width="350">
+            <TextBlock Text="ID suwnicy:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_IDSuwnicy" Text="436" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="Wewnętrzny nr ID dźwignicy" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,70,0,0" Width="350">
+            <TextBlock Text="Numer fabryczny:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_NumerFabryczny" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,100,0,0" Width="350">
+            <TextBlock Text="Producent:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_Producent" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,130,0,0" Width="350">
+            <TextBlock Text="Typ / Model:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_TypModel" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,160,0,0" Width="350">
+            <TextBlock Text="Rok produkcji:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_RokProdukcji" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,190,0,0" Width="350">
+            <TextBlock Text="Rok montażu:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_RokMontazu" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,220,0,0" Width="350">
+            <TextBlock Text="Lokalizacja:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_Lokalizacja" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="hala / linia / tor / dział" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,250,0,0" Width="350">
+            <TextBlock Text="Właściciel:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_Wlasciciel" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <!-- /// -->
+        <!-- Dane Techniczne dźwignic środkowa kolumna-->
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="#FF3D3D3D" BorderThickness="1,1,1,1" Background="Transparent" Margin="0,0,0,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0,0,0,0" Width="500">
+                <TextBox Text="Dane Techniczne" Margin="0,0,0,0" Height="30" Width="150" FontSize="14" FontFamily="Cambria" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="1,0,1,1" Focusable="False" IsHitTestVisible="False" Foreground="White" SelectionBrush="#FF6D7880" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" />
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,40,0,0" Width="500">
+            <TextBlock Text="Rodzaj suwnicy:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_RodzajSuwnicy" Text="436" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="pomostowa / bramowa / półbramowa" />
+            <TextBlock Text="Klasa pracy" Margin="10,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_KlasaPracy" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="np: FEM / ISO" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,70,0,0" Width="500">
+            <TextBlock Text="Udźwig nominalny:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_UdzwigNominalny" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="kg/t" />
+            <TextBlock Text="Zasilanie:" Margin="10,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_Zasilanie" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="np: 3x400V / szynoprzewód" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,100,0,0" Width="500">
+            <TextBlock Text="Rozpiętość:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_Rozpietosc" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="podawane w metrach" />
+            <TextBlock Text="Typ sterowania:" Margin="10,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_TypSterowania" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="kaseta / radio / kabina" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,130,0,0" Width="500">
+            <TextBlock Text="Wysokość podnoszenia:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_WysokoscPodnoszenia" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="podawane w metrach" />
+            <TextBlock Text="Grupa natężenia pracy:" Margin="10,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_GrupaNatezeniaPracy" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,160,0,0" Width="500">
+            <TextBlock Text="Prędkość podnoszenia:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_PredkoscPodnoszenia" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,190,0,0" Width="500">
+            <TextBlock Text="Prędkość jazdy mostu:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_PredkoscJazdyMostu" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,220,0,0" Width="500">
+            <TextBlock Text="Prędkość jazdy wózka:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_PredkoscJazdyWozka" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,250,0,0" Width="500">
+            <TextBlock Text="Liczba biegów:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_LiczbaBiegow" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <!-- /// -->
+        <!-- Dane UDT prawa kolumna-->
+        <Border Grid.Row="2" Grid.Column="2" BorderBrush="#FF3D3D3D" BorderThickness="1,1,1,1" Background="Transparent" Margin="0,0,0,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0,0,0,0" Width="350">
+                <TextBox Text="Dane UDT" Margin="0,0,0,0" Height="30" Width="150" FontSize="14" FontFamily="Cambria" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="1,0,1,1" Focusable="False" IsHitTestVisible="False" Foreground="White" SelectionBrush="#FF6D7880" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" />
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,40,0,0" Width="350">
+            <TextBlock Text="Numer ewidencyjny UDT:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_NumerEwidencyjnyUDT" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="Wewnętrzny nr ID dźwignicy" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,70,0,0" Width="350">
+            <TextBlock Text="Rodzaj dozoru:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_RodzajDozoru" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,100,0,0" Width="350">
+            <TextBlock Text="Data ostatniego badania:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_DataOstatniegoBadania" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,130,0,0" Width="350">
+            <TextBlock Text="Data ważności decyzji:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_DataWaznosciDecyzji" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,160,0,0" Width="350">
+            <TextBlock Text="Status:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_Status" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" ToolTip="dopuszczona / wstrzymana / wyłączona" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,190,0,0" Width="350">
+            <TextBlock Text="Jednostka UDT:" Margin="5,0,0,0" Foreground="White" Width="130" />
+            <TextBox x:Name="TB_JednostkaUDT" Width="100" Background="#FF3D3D3D" BorderBrush="#FF3D3D3D" Foreground="White" Focusable="False" IsHitTestVisible="False" />
+        </StackPanel>
+    </Grid>
+</Window>
