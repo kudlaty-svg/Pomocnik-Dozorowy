@@ -19,6 +19,7 @@ Format zgodny z "Keep a Changelog" oraz semver: MAJOR.MINOR.PATCH
 ## [0.2.0b] - REBUILD
 ### Changed
 - Przebudowa całej aplikacji od podstaw. Wszelkie nowe funkcje i zmiany będą umieszczane tutaj i na github
+- Większość funkcji aplikacji jest chwilowo wyłączona z wględu na przebudowanie aplikacji, ale wkrótce zostaną ponownie dodane i poprawione.
 
 ---
 ## [0.2.0b] - 2026-02-09

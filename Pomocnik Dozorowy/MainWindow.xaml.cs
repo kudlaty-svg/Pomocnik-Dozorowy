@@ -1,4 +1,5 @@
 ﻿using Pomocnik_Dozorowy.Dzwignice;
+using Pomocnik_Dozorowy.OknaPomocnicze;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,7 +37,8 @@ namespace Pomocnik_Dozorowy
         //Otwier okno z informacjami o programie
         private void Btn_Pomoc_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("W fazie rozwoju. Proszę o cierpliwość.", "Pomoc", MessageBoxButton.OK, MessageBoxImage.Information);
+            OknoPomoc oknoPomoc = new OknoPomoc();
+            oknoPomoc.ShowDialog();
         }
         //Zamyka aplikację
         private void Btn_Wyjscie_Click(object sender, RoutedEventArgs e)

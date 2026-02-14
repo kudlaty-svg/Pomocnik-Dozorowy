@@ -41,5 +41,12 @@ namespace Pomocnik_Dozorowy.Dzwignice
         {
             Application.Current.Shutdown();
         }
+
+        private void Btn_Powrot_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

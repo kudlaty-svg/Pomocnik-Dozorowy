@@ -14,9 +14,9 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Margin="0">
             <TextBlock Text="Wybierze grupę urządzeń transportu bliskiego" TextWrapping="Wrap" FontSize="20" FontWeight="Bold" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center" Margin="0,20,0,20" FontFamily="Cambria" Width="300" TextAlignment="Center" />
-            <Button x:Name="Btn_Dzwignice" Content="Dźwignice" Style="{StaticResource DarkButtonStyle}" Margin="0,20,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Dzwignice_Click" />
-            <Button x:Name="Btn_WozkiJezdniowe" Content="Wózki jezdniowe" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_WozkiJezdniowe_Click" />
-            <Button x:Name="Btn_Pomoc" Content="Pomoc" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Pomoc_Click" />
+            <Button x:Name="Btn_Dzwignice" Content="Dźwignice" Style="{StaticResource DarkButtonStyle}" Margin="0,20,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Dzwignice_Click" ToolTip="Informacje o dźwignicach" />
+            <Button x:Name="Btn_WozkiJezdniowe" Content="Wózki jezdniowe" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_WozkiJezdniowe_Click" ToolTip="Informacje o wózkach jezdniowych" />
+            <Button x:Name="Btn_Pomoc" Content="Pomoc" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Pomoc_Click" ToolTip="Informacje o aplikacji i kontakt" />
             <Button x:Name="Btn_Wyjscie" Content="Wyjście" Style="{StaticResource DarkButtonStyle}" Margin="0,0,0,0" Height="40" Width="200" Foreground="White" FontSize="16" FontWeight="Bold" Click="Btn_Wyjscie_Click" />
         </StackPanel>
         <Border Grid.Row="1" BorderBrush="#FF3D3D3D" BorderThickness="0,1,0,0" />
