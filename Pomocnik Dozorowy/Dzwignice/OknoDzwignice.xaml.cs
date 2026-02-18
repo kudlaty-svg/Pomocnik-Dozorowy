@@ -22,6 +22,7 @@ namespace Pomocnik_Dozorowy.Dzwignice
         public OknoDzwignice()
         {
             InitializeComponent();
+            MessageBox.Show("[Dźwignice] jest w fazie rozwoju, niektóre funkcje mogą być dalej nie dostępne. Prosimy o cierpliwość i wyrozumiałość.", "Informacja", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         // Pozwala na przeciąganie okna po kliknięciu i przytrzymaniu lewego przycisku myszy na obszarze Border
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

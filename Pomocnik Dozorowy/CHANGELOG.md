@@ -16,10 +16,26 @@ Format zgodny z "Keep a Changelog" oraz semver: MAJOR.MINOR.PATCH
 
 ### Fixed
 - Poprawki błędów.
+
+## [0.2.5b] - 2026-02-18]
+### Added
+- Dodano nowe dane jak Konserwacja i Eksploatacja
+
+### Changed
+- Zmieniono układ danych w oknie Dźwignice
+- Zmieniono cała kolorystykę okna głównego i dźwignic
+- Ujednolicono kod i poprawiono jego czytelność
+
+### Fixed
+- Poprawiono drobne błędy w interfejsie użytkownika
+- Poprawiono wyświetlanie danych w oknie Dźwignice
+- Poprawiono skalowanie okna Dźwignice
+
+---
 ## [0.2.0b] - REBUILD
 ### Changed
 - Przebudowa całej aplikacji od podstaw. Wszelkie nowe funkcje i zmiany będą umieszczane tutaj i na github
-- Większość funkcji aplikacji jest chwilowo wyłączona z wględu na przebudowanie aplikacji, ale wkrótce zostaną ponownie dodane i poprawione.
+- Większość funkcji aplikacji jest chwilowo wyłączona z względu na przebudowanie aplikacji, ale wkrótce zostaną ponownie dodane i poprawione.
 
 ---
 ## [0.2.0b] - 2026-02-09
